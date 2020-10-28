@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Article() {
-  const article = {
-    id: 1,
-    title: "Article 1",
-    category: "News",
-    published: true,
-    content: "Lorem ipsum blablabla",
-  };
+const StyledApp = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export default function Article(props) {
+  const { article } = props;
+  const { title, category, published } = article;
 
   return (
-    <div>
-      <h2>{article.title}</h2>
-      <p>{article.category}</p>
-      <p>{article.published ? "Published" : "Draft"}</p>
-    </div>
+    <StyledApp>
+      <h2>{title}</h2>
+      <p>{category}</p>
+      <p>{published ? "Published" : "Draft"}</p>
+    </StyledApp>
   );
 }
